@@ -1,0 +1,7 @@
+delimiter //
+drop procedure if exists $1 //
+create procedure ${1:}(${2})
+begin
+	${3}
+end //
+delimiter ;

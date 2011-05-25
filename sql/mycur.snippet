@@ -1,0 +1,16 @@
+-- Place declarations at the beginning of the procedure
+declare done int default 0;
+declare a, b int;
+declare ${1:cur} cursor for select ${3:a, b} from ${2:table};
+declare continue handler for not found set done = 1;
+
+-- Using cursor
+open $1;
+repeat
+	fetch $1 into a, b;
+	if not done then
+		-- Loop block
+		${4}
+	end if;
+until done end repeat;
+close $1;

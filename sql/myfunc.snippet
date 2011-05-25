@@ -1,0 +1,7 @@
+delimiter //
+drop function if exists $1//
+create function ${1:}(${2}) returns ${3:int}
+begin
+	${4}
+end //
+delimiter ;
