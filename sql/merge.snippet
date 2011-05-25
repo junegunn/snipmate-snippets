@@ -1,0 +1,9 @@
+merge into ${1:target} t
+using (
+	${2}
+) s
+on (t.${3:id} = s.$3)
+when not matched then
+	insert (${4}) values (${5})
+when matched then
+	update set ${6};
