@@ -1,5 +1,5 @@
-create or replace function ${1:name}(${2}) return ${3:varchar2} as
-	${4}
+create or replace function ${1:name}(${2:p1 number, p2 number}) return ${3:varchar2} as
+	${4:str varchar2(4000);}
 begin
 	${5}
 exception

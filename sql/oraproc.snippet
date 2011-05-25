@@ -1,5 +1,5 @@
-create or replace procedure ${1:name}(${2}) as
-	${3}
+create or replace procedure ${1:name}(${2:p1 number, p2 number}) as
+	${3:str varchar2(4000);}
 begin
 	${4}
 exception
