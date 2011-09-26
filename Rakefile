@@ -20,5 +20,5 @@ task :deploy_local => ["snippets_dir:purge"] do
   Dir.foreach(".") do |f|
     cp_r f, @snippets_dir, :verbose => true if File.directory?(f) && f =~ /^[^\.]/
   end
-  cp "support_functions.vim", @snippets_dir, :verbose => true
+  cp "support_functions.vim", @snippets_dir + '/../plugin', :verbose => true
 end
