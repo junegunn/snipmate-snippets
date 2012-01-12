@@ -7,10 +7,10 @@ declare continue handler for not found set done = 1;
 -- Using cursor
 open $1;
 repeat
-	fetch $1 into a, b;
-	if not done then
-		-- Loop block
-		${4}
-	end if;
+    fetch $1 into a, b;
+    if not done then
+        -- Loop block
+        ${4}
+    end if;
 until done end repeat;
 close $1;
